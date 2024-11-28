@@ -56,15 +56,6 @@ const useChatbot = ({
 
   const initialState = getInitialState(config);
 
-  useEffect(() => {
-    if (messageHistory && Array.isArray(messageHistory)) {
-      setState((prevState: any) => ({
-        ...prevState,
-        messages: messageHistory,
-      }));
-    }
-  }, [messageHistory]);
-
   const [state, setState] = React.useState({
     messages: [...config.initialMessages],
     ...initialState,
@@ -84,7 +75,7 @@ const useChatbot = ({
         messages: messageHistory,
       }));
     }
-  }, []);
+  }, [messageHistory]);
 
   useEffect(() => {
     const refValue: HTMLDivElement = messageContainerRef.current;
