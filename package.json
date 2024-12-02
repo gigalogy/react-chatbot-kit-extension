@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://fredrikoseberg.github.io/react-chatbot-kit-docs/",
+  "homepage": "https://gigalogy.github.io/react-chatbot-kit-extension-docs/",
   "description": "Fully customizable chatbot kit for react.",
   "main": "build/index.js",
   "types": "build/src/index.d.ts",
