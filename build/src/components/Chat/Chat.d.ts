@@ -17,7 +17,7 @@ interface IChatProps {
     state: any;
     disableScrollToBottom: boolean;
     messageHistory: IMessage[] | string;
-    parse?: (message: string, image?: any, audioFile?: any) => void;
+    parse?: (message: string) => void;
     actions?: object;
     messageContainerRef: React.MutableRefObject<HTMLDivElement>;
 }
