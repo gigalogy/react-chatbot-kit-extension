@@ -56,15 +56,6 @@ const useChatbot = ({
 
   const initialState = getInitialState(config);
 
-  useEffect(() => {
-    if (messageHistory && Array.isArray(messageHistory)) {
-      setState((prevState: any) => ({
-        ...prevState,
-        messages: messageHistory,
-      }));
-    }
-  }, [messageHistory]);
-
   const [state, setState] = React.useState({
     messages: [...config.initialMessages],
     ...initialState,
@@ -84,19 +75,19 @@ const useChatbot = ({
         messages: messageHistory,
       }));
     }
-  }, []);
+  }, [messageHistory]);
 
   useEffect(() => {
     const refValue: HTMLDivElement = messageContainerRef.current;
 
     return () => {
-      if (saveMessages && typeof saveMessages === 'function') {
+      if (refValue && saveMessages && typeof saveMessages === 'function') {
         const HTML = refValue.innerHTML.toString();
 
         saveMessages(messagesRef.current, HTML);
       }
     };
-  }, []);
+  }, [saveMessages]);
 
   useEffect(() => {
     stateRef.current = state;
